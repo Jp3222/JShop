@@ -3,14 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.jshop.views.views;
+
 import com.jutil.framework.ViewStates;
 import javax.swing.JPanel;
+
 /**
  *
  * @author juan-campos
  */
 public class VHome extends JPanel implements ViewStates {
-    
+
     /**
      * Creates new form VHome
      */

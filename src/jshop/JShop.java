@@ -14,7 +14,7 @@ public class JShop {
 
     public static void main(String[] args) {
         ProgramSystem p = ProgramSystem.getINSTANCE();
-        p.conectionDB();
+        //p.conectionDB();
         p.run();
         
     }

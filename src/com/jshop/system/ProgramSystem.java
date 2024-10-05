@@ -4,7 +4,6 @@
  */
 package com.jshop.system;
 
-import com.jshop.views.windows.WLogin;
 import com.jshop.views.windows.WNewLogin;
 import com.jutil.framework.MainSystem;
 import com.jutil.jbd.conexion.Conexion;
@@ -67,7 +66,7 @@ public class ProgramSystem implements MainSystem {
     @Override
     public boolean run() {
         SwingUtilities.invokeLater(() -> {
-            WLogin login = new WLogin();
+            WNewLogin login = new WNewLogin();
             login.setVisible(true);
         });
         return true;
