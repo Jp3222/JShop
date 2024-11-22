@@ -43,7 +43,7 @@ public class WMain extends javax.swing.JFrame {
         ly.show(center_panel, home_panel.getName());
 
         buttons_option = new JButton[]{
-            btn_home, btn_employees, btn_inventory, btn_products, btn_suppliers, btn_exit
+            btn_home, btn_inventory, btn_products, btn_exit
         };
 
         for (JButton i : buttons_option) {
@@ -63,42 +63,53 @@ public class WMain extends javax.swing.JFrame {
     private void initComponents() {
 
         west_panel = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btn_exit = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btn_home = new javax.swing.JButton();
-        btn_employees = new javax.swing.JButton();
-        btn_suppliers = new javax.swing.JButton();
         btn_products = new javax.swing.JButton();
         btn_inventory = new javax.swing.JButton();
+        btn_exit = new javax.swing.JButton();
         center_panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 600));
 
-        west_panel.setPreferredSize(new java.awt.Dimension(250, 600));
+        west_panel.setPreferredSize(new java.awt.Dimension(300, 600));
         west_panel.setLayout(new java.awt.BorderLayout());
+
+        jPanel2.setPreferredSize(new java.awt.Dimension(300, 50));
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jButton1.setToolTipText("buscar");
+        jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
+        jPanel2.add(jButton1, java.awt.BorderLayout.LINE_START);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Inicio");
+        jPanel2.add(jLabel2, java.awt.BorderLayout.CENTER);
+
+        jButton2.setToolTipText("Menu");
+        jButton2.setPreferredSize(new java.awt.Dimension(50, 50));
+        jPanel2.add(jButton2, java.awt.BorderLayout.LINE_END);
+
+        west_panel.add(jPanel2, java.awt.BorderLayout.NORTH);
+
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Foto");
         jLabel1.setPreferredSize(new java.awt.Dimension(200, 200));
-        west_panel.add(jLabel1, java.awt.BorderLayout.PAGE_START);
+        jPanel1.add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
-        btn_exit.setText("jButton1");
-        btn_exit.setMinimumSize(new java.awt.Dimension(100, 50));
-        btn_exit.setPreferredSize(new java.awt.Dimension(100, 50));
-        west_panel.add(btn_exit, java.awt.BorderLayout.PAGE_END);
-
-        jPanel3.setLayout(new java.awt.GridLayout(8, 0));
+        jPanel3.setLayout(new java.awt.GridLayout(6, 0));
 
         btn_home.setText("Inicio");
         jPanel3.add(btn_home);
-
-        btn_employees.setText("Empleados");
-        jPanel3.add(btn_employees);
-
-        btn_suppliers.setText("Proveedores");
-        jPanel3.add(btn_suppliers);
 
         btn_products.setText("Productos");
         jPanel3.add(btn_products);
@@ -106,7 +117,14 @@ public class WMain extends javax.swing.JFrame {
         btn_inventory.setText("Inventario");
         jPanel3.add(btn_inventory);
 
-        west_panel.add(jPanel3, java.awt.BorderLayout.CENTER);
+        jPanel1.add(jPanel3, java.awt.BorderLayout.CENTER);
+
+        west_panel.add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        btn_exit.setText("Salir");
+        btn_exit.setMinimumSize(new java.awt.Dimension(100, 50));
+        btn_exit.setPreferredSize(new java.awt.Dimension(100, 50));
+        west_panel.add(btn_exit, java.awt.BorderLayout.PAGE_END);
 
         getContentPane().add(west_panel, java.awt.BorderLayout.LINE_START);
 
@@ -117,12 +135,7 @@ public class WMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void showView(JButton o) {
-        System.out.println(o.getName());
-        if (btn_employees == o) {
-            ly.show(center_panel, employees_panel.getName());
-        } else if (btn_suppliers == o) {
-
-        } else if (btn_products == o) {
+        if (btn_products == o) {
             ly.show(center_panel, products_panel.getName());
         } else if (btn_inventory == o) {
 
@@ -136,14 +149,17 @@ public class WMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_employees;
     private javax.swing.JButton btn_exit;
     private javax.swing.JButton btn_home;
     private javax.swing.JButton btn_inventory;
     private javax.swing.JButton btn_products;
-    private javax.swing.JButton btn_suppliers;
     private javax.swing.JPanel center_panel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel west_panel;
     // End of variables declaration//GEN-END:variables

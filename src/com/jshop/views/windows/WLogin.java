@@ -4,9 +4,7 @@
  */
 package com.jshop.views.windows;
 
-import com.jshop.controllers.EmployeesController;
 import com.jutil.framework.WindowStates;
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
@@ -167,10 +165,10 @@ public class WLogin extends javax.swing.JFrame implements WindowStates {
     @Override
     public void events() {
         btn_login.addActionListener(e -> {
-            if (!EmployeesController.login(user.getText(), String.valueOf(password.getPassword()))) {
-                JOptionPane.showMessageDialog(this, "Usuario no encontrado");
-                return;
-            }
+//            if (!EmployeesController.login(user.getText(), String.valueOf(password.getPassword()))) {
+//                JOptionPane.showMessageDialog(this, "Usuario no encontrado");
+//                return;
+//            }
             goToMain();
         });
 
