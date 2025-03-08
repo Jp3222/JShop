@@ -4,7 +4,7 @@
  */
 package com.jshop.model.obj;
 
-import com.jutil.jbd2.conexion.obj.AbstractDBObject;
+import com.jsoftware.jutil.db.conexion.obj.AbstractDBObject;
 import java.util.Arrays;
 
 /**

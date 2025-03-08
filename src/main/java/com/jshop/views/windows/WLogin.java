@@ -4,8 +4,8 @@
  */
 package com.jshop.views.windows;
 
+import com.jshop.controllers.LoginController;
 import com.jsoftware.jutil.framework.WindowStates;
-import javax.swing.SwingUtilities;
 
 /**
  *
@@ -13,15 +13,50 @@ import javax.swing.SwingUtilities;
  */
 public class WLogin extends javax.swing.JFrame implements WindowStates {
 
-    private boolean login_process;
+    private final LoginController controller;
 
     /**
      * Creates new form WLogin
      */
     public WLogin() {
         initComponents();
+        controller = new LoginController(this);
         build();
+    }
 
+    @Override
+    public final void build() {
+        components();
+        events();
+        finalState();
+        initialState();
+    }
+
+    @Override
+    public void components() {
+
+    }
+
+    @Override
+    public void events() {
+        login_button.addActionListener(controller);
+        config_button.addActionListener(controller);
+    }
+
+    @Override
+    public void initialState() {
+    }
+
+    @Override
+    public void finalState() {
+    }
+
+    public String[] getCredentials() {
+        String _user = user.getText().trim();
+        String _password = String.valueOf(password.getPassword()).trim();
+        return new String[]{
+            _user, _password
+        };
     }
 
     /**
@@ -45,9 +80,9 @@ public class WLogin extends javax.swing.JFrame implements WindowStates {
         showPassword = new javax.swing.JCheckBox();
         password = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
-        btn_login = new javax.swing.JButton();
+        login_button = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        config_button = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,8 +126,9 @@ public class WLogin extends javax.swing.JFrame implements WindowStates {
         jPanel3.add(jPanel5);
         jPanel3.add(jLabel6);
 
-        btn_login.setText("Inicio de sesion");
-        jPanel3.add(btn_login);
+        login_button.setText("Inicio de sesion");
+        login_button.setActionCommand("login");
+        jPanel3.add(login_button);
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.CENTER);
 
@@ -101,9 +137,9 @@ public class WLogin extends javax.swing.JFrame implements WindowStates {
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 50));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jButton1.setText("C");
-        jButton1.setPreferredSize(new java.awt.Dimension(50, 40));
-        jPanel2.add(jButton1, java.awt.BorderLayout.LINE_START);
+        config_button.setActionCommand("config");
+        config_button.setPreferredSize(new java.awt.Dimension(50, 40));
+        jPanel2.add(config_button, java.awt.BorderLayout.LINE_START);
 
         jLabel2.setText("Estado");
         jPanel2.add(jLabel2, java.awt.BorderLayout.CENTER);
@@ -114,27 +150,9 @@ public class WLogin extends javax.swing.JFrame implements WindowStates {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void goToMain() {
-        if (login_process) {
-            return;
-        }
 
-        login_process = true;
-
-        SwingUtilities.invokeLater(() -> {
-            main = new WMain(this);
-            main.setVisible(true);
-        });
-        
-        setVisible(true);
-        dispose();
-
-        login_process = false;
-        initialState();
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_login;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton config_button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -146,55 +164,10 @@ public class WLogin extends javax.swing.JFrame implements WindowStates {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JButton login_button;
     private javax.swing.JPasswordField password;
     private javax.swing.JCheckBox showPassword;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
-    private WMain main;
 
-    @Override
-    public final void build() {
-
-        components();
-        finalState();
-        initialState();
-        events();
-    }
-
-    @Override
-    public void events() {
-        btn_login.addActionListener(e -> {
-//            if (!EmployeesController.login(user.getText(), String.valueOf(password.getPassword()))) {
-//                JOptionPane.showMessageDialog(this, "Usuario no encontrado");
-//                return;
-//            }
-            goToMain();
-        });
-
-    }
-
-    @Override
-    public void components() {
-        showPassword.addChangeListener(e -> {
-            if (showPassword.isSelected()) {
-                password.setEchoChar((char) 0);
-            } else {
-                password.setEchoChar((char) 0);
-                password.setEchoChar('*');
-            }
-        });
-
-    }
-
-    @Override
-    public void initialState() {
-        user.setText(null);
-        password.setText(null);
-        showPassword.setSelected(false);
-    }
-
-    @Override
-    public void finalState() {
-        password.setEchoChar('*');
-    }
 }

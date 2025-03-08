@@ -8,7 +8,7 @@ import com.jshop.views.windows.WLogin;
 import com.jsoftware.jutil.framework.MainSystem;
 import com.jsoftware.jutil.db.conexion.DB;
 import com.jsoftware.jutil.db.conexion.DBConnection;
-import com.jutil.platf.So;
+import com.jsoftware.jutil.platf.So;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
@@ -19,13 +19,7 @@ import javax.swing.SwingUtilities;
  */
 public class ProgramSystem implements MainSystem {
 
-    private final static ProgramSystem INSTANCE = new ProgramSystem();
-
-    public static ProgramSystem getINSTANCE() {
-        return INSTANCE;
-    }
-
-    private ProgramSystem() {
+    public ProgramSystem() {
         So.setDefaultLookAndFeel();
     }
 
@@ -80,6 +74,11 @@ public class ProgramSystem implements MainSystem {
     @Override
     public boolean closeSys() {
         return true;
+    }
+
+    @Override
+    public Object getResources(String key) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

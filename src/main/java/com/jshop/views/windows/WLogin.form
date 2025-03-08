@@ -147,9 +147,10 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel6">
             </Component>
-            <Component class="javax.swing.JButton" name="btn_login">
+            <Component class="javax.swing.JButton" name="login_button">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Inicio de sesion"/>
+                <Property name="actionCommand" type="java.lang.String" value="login"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -170,9 +171,9 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="config_button">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C"/>
+            <Property name="actionCommand" type="java.lang.String" value="config"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[50, 40]"/>
             </Property>

@@ -4,11 +4,12 @@
 package com.jshop;
 
 import com.jshop.system.ProgramSystem;
+import com.jsoftware.jutil.framework.LaunchApp;
 
 public class JShopMV {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        ProgramSystem.getINSTANCE().run();
+        LaunchApp.getInstance(new ProgramSystem()).main();
     }
 }

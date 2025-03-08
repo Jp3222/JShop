@@ -4,7 +4,7 @@
  */
 package com.jshop.system;
 
-import com.jutil.platf.So;
+import com.jsoftware.jutil.platf.So;
 import java.io.File;
 
 /**
@@ -22,10 +22,10 @@ public class AppFiles {
         StringBuilder sb = new StringBuilder();
         sb.append(File.separator);
         if (So.isLinux()) {
-            if (So.USER_LANGUAJE.equals("en")) {
+            if (So.USER_LANGUAGE.equals("en")) {
                 sb.append("Desktop");
             }
-            if (So.USER_LANGUAJE.equals("es")) {
+            if (So.USER_LANGUAGE.equals("es")) {
                 sb.append("Escritorio");
             }
         }
@@ -41,10 +41,10 @@ public class AppFiles {
     private static String getDocuments() {
         StringBuilder sb = new StringBuilder();
         if (So.isLinux()) {
-            if (So.USER_LANGUAJE.equals("en")) {
+            if (So.USER_LANGUAGE.equals("en")) {
                 sb.append("Documents");
             }
-            if (So.USER_LANGUAJE.equals("es")) {
+            if (So.USER_LANGUAGE.equals("es")) {
                 sb.append("Documentos");
             }
         }
